@@ -1,0 +1,16 @@
+<ng-container>
+  <div class="container">
+    <div class="form-container">
+      <label>Source Data:</label>
+      <input
+        type="text"
+        [(ngModel)]="inputData"
+        class="data-input" />
+      <button (click)="plotBarChart()">Update Data</button>
+    </div>
+    <div id="chart" class="chart-container"></div>
+    <div class="close-control">
+      <button class="text-link-button" (click)="close()">CLOSE</button>
+    </div>
+  </div>
+</ng-container>

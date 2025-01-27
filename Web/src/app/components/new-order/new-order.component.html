@@ -1,0 +1,95 @@
+<ng-container>
+  <div class="container">
+    <header class="header">
+      <h2>Customer AHPOP -  New Order</h2>
+    </header>
+    <form [formGroup]="orderForm">
+      <h3>Order</h3>
+      <div class="row">
+        <div class="col">
+            <select id="empId" formControlName="empId" [(ngModel)]="orderRequest.empId" required>
+              <option [value]="0" disabled selected>Employee*</option>
+              @for (employee of listEmployees; track employee.id){
+                <option [value]="employee.id">{{ employee.value }}</option>
+              }
+            </select>
+        </div>
+        <div class="col">
+          <select id="shipperId" formControlName="shipperId" [(ngModel)]="orderRequest.shipperId" required>
+            <option value="0" disabled selected>Shipper*</option>
+            @for (shipper of listShippers; track shipper.id){
+              <option [value]="shipper.id">{{ shipper.value }}</option>
+            }
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-full">
+          <input placeholder="Ship Name*" formControlName="shipName" id="shipName" type="text" [(ngModel)]="orderRequest.shipName" required />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <input placeholder="Ship Address*" formControlName="shipAddress" id="shipAddress" type="text" [(ngModel)]="orderRequest.shipAddress" required />
+        </div>
+        <div class="col">
+          <input placeholder="Ship City*" formControlName="shipCity" id="shipCity" type="text" [(ngModel)]="orderRequest.shipCity" required />
+        </div>
+        <div class="col">
+          <input placeholder="Ship Country*" formControlName="shipCountry" id="shipCountry" type="text" [(ngModel)]="orderRequest.shipCountry" required />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <input placeholder="Order Date*" formControlName="orderDate" id="orderDate" type="date" [(ngModel)]="orderRequest.orderDate" required />
+
+        </div>
+        <div class="col">
+          <input placeholder="Required Date*" formControlName="requiredDate" id="requiredDate" type="date" [(ngModel)]="orderRequest.requiredDate" required />
+
+        </div>
+        <div class="col">
+          <input placeholder="Shipped Date*" formControlName="shippedDate" id="shippedDate" type="date" [(ngModel)]="orderRequest.shippedDate" required />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-full">
+          <input placeholder="Freight" formControlName="freight" id="freight" type="text" [(ngModel)]="orderRequest.freight" />
+        </div>
+      </div>
+
+      <h3>Order Details</h3>
+
+      <div class="row">
+        <div class="col-full">
+          <select id="productId" formControlName="productId" [(ngModel)]="orderRequest.productId" required>
+            <option [value]="0" disabled selected>Product*</option>
+            @for (product of listProducts; track product.id){
+              <option [value]="product.id">{{ product.value }}</option>
+            }
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <input placeholder="Unit Price*" formControlName="unitPrice" id="unitPrice" type="text" [(ngModel)]="orderRequest.unitPrice" required />
+        </div>
+        <div class="col">
+          <input placeholder="Quantity*" formControlName="quantity" id="quantity" type="text" [(ngModel)]="orderRequest.quantity" required />
+        </div>
+        <div class="col">
+          <input placeholder="Discount*" formControlName="discount" id="discount" type="text" [(ngModel)]="orderRequest.discount" required />
+        </div>
+      </div>
+      <div class="buttons-container">
+        <button (click)="close()">Close</button>
+        <button (click)="saveForm()">Save</button>
+      </div>
+    </form>
+  </div>
+</ng-container>

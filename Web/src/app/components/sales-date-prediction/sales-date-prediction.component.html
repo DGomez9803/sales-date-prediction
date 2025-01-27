@@ -1,0 +1,96 @@
+<ng-container>
+  <button class="saleButton" (click)="viewD3()">D3</button>
+
+  <div class="container">
+    <div class="content">
+      <div class="label-container">
+        <label class="label">Customers</label>
+      </div>
+      <div class="search-container">
+        <input
+          id="customerSearch"
+          type="text"
+          class="search-input"
+          placeholder="Customer Name"
+          [(ngModel)]="searchQuery"
+          (keydown.enter)="filterCustomers()"
+        />
+        <button
+        type="button"
+        class="search-button"
+        (click)="filterCustomers()">
+        <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </div>
+    <table class="customers-table">
+      <thead>
+        <tr>
+          <th>Company Name</th>
+          <th>Last Order Date</th>
+          <th>Next Predicted Order</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (customer of filteredCustomers; track customer.custId){
+          <tr>
+            <td>{{ customer.companyName }}</td>
+            <td>{{ customer.lastOrderDate  }}</td>
+            <td>{{ customer.nextPredictedOrderDate  }}</td>
+            <td class="buttons-container">
+              <button class="text-link-button" (click)="viewOrders(customer.custId)">VIEW ORDERS</button>
+              <button class="text-link-button green" (click)="createOrder(customer.custId)">NEW ORDER</button>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+
+    <div class="pagination-controls">
+
+      <span> Rows per page: </span>
+
+      <select (change)="changePageSelect($event)" [value]="pagination.currentPage">
+        @for (page of pageOptions; track page){
+          <option>{{ page }}</option>
+        }
+      </select>
+      <span> {{textPageCurrent}}</span>
+
+      <button (click)="previousPage()" [disabled]="pagination.currentPage === 1"><</button>
+      <button (click)="nextPage()" [disabled]="pagination.currentPage === pagination.totalPages">></button>
+    </div>
+  </div>
+
+  @if (isVisibleOrders) {
+    <div class="modal-overlay">
+      <div class="modal">
+        <app-orders
+          [customerId]="selectedCustomerId"
+          (closeModal)="closeModalOrders()">
+        </app-orders>
+      </div>
+    </div>
+  }
+
+  @if (isVisibleNewOrder) {
+    <div class="modal-overlay">
+      <div class="modal">
+        <app-new-order
+          [customerId]="selectedCustomerId"
+          (closeForm)="closeModalNewOrder()">
+        </app-new-order>
+      </div>
+    </div>
+  }
+
+  @if (isVisibleD3) {
+    <div class="modal-overlay">
+      <div class="modal">
+        <app-d3 (closeModal)="closeModalD3()"></app-d3>
+      </div>
+    </div>
+  }
+</ng-container>
+

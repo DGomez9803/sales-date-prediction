@@ -1,0 +1,123 @@
+.header {
+  background: #9e0707;
+  color: white;
+  padding: 10px 10px;
+  text-align: left;
+  position: relative;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.container {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  width: 100%;
+  border: 2px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+
+.table-controls {
+  margin-bottom: 10px;
+}
+
+.table-controls input {
+  padding: 5px;
+  font-size: 14px;
+}
+
+.customers-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+.customers-table th,
+.customers-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+.customers-table tbody tr:hover {
+  background: #f5f5f5;
+}
+
+.close-control {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.close-control button {
+  background: none;
+  border: none;
+  color: #ff0000;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0;
+  margin-right: 10px;
+}
+
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 20px;
+  width: 99%;
+}
+
+.pagination-controls span {
+  font-size: 14px;
+}
+
+.pagination-controls select {
+  padding: 5px;
+  font-size: 14px;
+}
+
+.pagination-controls button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  color: #333;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.pagination-controls button:disabled {
+  cursor: not-allowed;
+  background-color: #e0e0e0;
+  color: #999;
+}
+
+.pagination-controls button:hover:not(:disabled) {
+  background-color: #d0d0d0;
+  transform: scale(1.1);
+}
+
+.pagination-controls button:focus {
+  outline: none;
+  box-shadow: 0 0 3px 2px #007bff;
+}
+
+

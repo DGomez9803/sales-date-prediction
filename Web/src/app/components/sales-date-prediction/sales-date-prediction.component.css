@@ -1,0 +1,229 @@
+.container {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  width: 90%;
+  border: 2px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.container h3 {
+  text-align: left;
+  margin: 0;
+}
+
+.content {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.table-controls {
+  margin-bottom: 10px;
+}
+
+.table-controls input {
+  padding: 5px;
+  font-size: 14px;
+}
+
+.customers-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+.customers-table th,
+.customers-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+.customers-table tbody tr:hover {
+  background: #f5f5f5;
+}
+
+
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.pagination-controls span {
+  font-size: 14px;
+}
+
+.pagination-controls select {
+  padding: 5px;
+  font-size: 14px;
+}
+
+.pagination-controls button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  color: #333;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.pagination-controls button:disabled {
+  cursor: not-allowed;
+  background-color: #e0e0e0;
+  color: #999;
+}
+
+.pagination-controls button:hover:not(:disabled) {
+  background-color: #d0d0d0;
+  transform: scale(1.1);
+}
+
+.pagination-controls button:focus {
+  outline: none;
+  box-shadow: 0 0 3px 2px #007bff;
+}
+
+
+
+.text-link-button {
+  background: none;
+  border: none;
+  color: #ff0000;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0;
+  margin-right: 10px;
+}
+
+.text-link-button.green {
+  color: #107d1b;
+}
+
+.buttons-container {
+  text-align: center;
+}
+
+
+.label-container {
+  flex: 1;
+}
+
+.label {
+  font-size: 18px;
+  color: #000;
+  font-weight: bold;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  overflow: hidden;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.search-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  border-bottom: 2px solid #ccc;
+  transition: border-color 0.3s ease;
+}
+
+.search-container:hover,
+.search-input:focus {
+  border-color: #007bff;
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 8px 40px 8px 10px;
+  font-size: 16px;
+  background: none;
+  color: #333;
+}
+
+.search-input::placeholder {
+  color: #aaa;
+}
+
+.search-button {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  padding: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  color: #555;
+  transition: color 0.3s ease;
+}
+
+.search-button:hover {
+  color: #007bff;
+}
+
+
+.search-button i {
+  font-size: 20px;
+}
+
+.saleButton {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+

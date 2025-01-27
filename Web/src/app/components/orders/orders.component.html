@@ -1,0 +1,49 @@
+<ng-container>
+  <div class="container">
+    <header class="header">
+      <h1>Customer AHPOP - Orders</h1>
+    </header>
+
+    <table class="customers-table">
+      <thead>
+        <tr>
+          <th>Order Id</th>
+          <th>Required Date</th>
+          <th>Shipped Data</th>
+          <th>Ship Name</th>
+          <th>Ship Anddress</th>
+          <th>Ship City</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (order of filteredOrders; track order.orderId){
+          <tr>
+            <td>{{ order.orderId }}</td>
+            <td>{{ order.requiredDate  }}</td>
+            <td>{{ order.shippedDate  }}</td>
+            <td>{{ order.shipName  }}</td>
+            <td>{{ order.shipAddress  }}</td>
+            <td>{{ order.shipCity  }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+    <div class="pagination-controls">
+      <span> Rows per page: </span>
+      <select (change)="changePageSelect($event)" [value]="pagination.currentPage">
+        @for (page of pageOptions; track page){
+          <option>{{ page }}</option>
+        }
+      </select>
+      <span> {{textPageCurrent}}</span>
+      <button (click)="previousPage()" [disabled]="pagination.currentPage === 1">←</button>
+      <button (click)="nextPage()" [disabled]="pagination.currentPage === pagination.totalPages">→</button>
+    </div>
+    <div class="close-control">
+      <button class="text-link-button" (click)="close()">CLOSE</button>
+    </div>
+  </div>
+</ng-container>
+
+
+

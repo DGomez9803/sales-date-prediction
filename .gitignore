@@ -1,0 +1,34 @@
+# Node modules (para Angular)
+node_modules/
+
+# Angular build output
+dist/
+tmp/
+.angular/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDEs y editores
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+
+# .NET Core
+bin/
+obj/
+
+# Archivos de ASP.NET Core
+wwwroot/
+
+# Dependencias de ASP.NET
+packages/
+
+# Archivos de configuración
+src/environments/*.ts
